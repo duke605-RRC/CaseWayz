@@ -1,5 +1,5 @@
 ActiveAdmin.register Customer do
-  permit_params :first_name, :last_name, :address, :city, :postal_code, :email, :province_id, :created_at, :updated_at
+  permit_params :first_name, :last_name, :address, :city, :postal_code, :email, :province_id
 
   form(:html => { :multipart => true }) do |f|
     f.inputs "Customer" do
@@ -26,7 +26,7 @@ ActiveAdmin.register Customer do
     column :postal_code
     column :email
     column :province_id do |customer|
-      customer.province
+      customer.province.name
     end
     column :created_at
     column :updated_at

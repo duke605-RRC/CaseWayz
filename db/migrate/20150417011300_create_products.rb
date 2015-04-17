@@ -10,7 +10,7 @@ class CreateProducts < ActiveRecord::Migration
             price DECIMAL NOT NULL check(price > 0.00),
             quantity INTEGER CHECK (quantity >= 0) DEFAULT 0,
             category_id INTEGER NOT NULL,
-            image TEXT NOT NULL,
+            image TEXT,
             created_at DATETIME NOT NULL,
             updated_at DATETIME NOT NULL,
             FOREIGN KEY (category_id) REFERENCES categories
