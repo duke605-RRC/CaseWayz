@@ -1,5 +1,4 @@
 ActiveAdmin.register Product do
-
   permit_params :name, :description, :price, :quantity, :image, :category_id, :created_at, :updated_at
 
   form(:html => { :multipart => true }) do |f|

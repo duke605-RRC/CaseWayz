@@ -54,15 +54,15 @@ ActiveRecord::Schema.define(version: 20150417040749) do
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string   "first_name",  limit: 50, null: false
-    t.string   "last_name",   limit: 50, null: false
-    t.text     "address",                null: false
-    t.text     "city",                   null: false
-    t.text     "postal_code",            null: false
-    t.text     "email",                  null: false
-    t.integer  "province_id",            null: false
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.string   "first_name",  limit: 50,  null: false
+    t.string   "last_name",   limit: 50,  null: false
+    t.string   "address",     limit: 255, null: false
+    t.string   "city",        limit: 100, null: false
+    t.string   "postal_code", limit: 6,   null: false
+    t.string   "email",       limit: 100, null: false
+    t.integer  "province_id",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "products", force: :cascade do |t|
