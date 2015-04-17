@@ -57,8 +57,9 @@ ActiveRecord::Schema.define(version: 20150417011300) do
     t.string   "name",        limit: 50,             null: false
     t.text     "description",                        null: false
     t.decimal  "price",                              null: false
-    t.integer  "quantity",                           default: 0
+    t.integer  "quantity",               default: 0
     t.integer  "category_id",                        null: false
+    t.text     "image",                              null: false
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
