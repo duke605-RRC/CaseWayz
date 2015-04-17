@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150417040749) do
+ActiveRecord::Schema.define(version: 20150417182635) do
+
+  create_table "abouts", force: :cascade do |t|
+    t.string   "title",       limit: 150, null: false
+    t.text     "description",             null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -53,6 +60,15 @@ ActiveRecord::Schema.define(version: 20150417040749) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "contacts", force: :cascade do |t|
+    t.text     "description", null: false
+    t.string   "phone",       null: false
+    t.string   "email",       null: false
+    t.text     "address",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string   "first_name",  limit: 50,  null: false
     t.string   "last_name",   limit: 50,  null: false
@@ -69,9 +85,9 @@ ActiveRecord::Schema.define(version: 20150417040749) do
     t.string   "name",        limit: 50,             null: false
     t.text     "description",                        null: false
     t.decimal  "price",                              null: false
-    t.integer  "quantity",                           default: 0
+    t.integer  "quantity",               default: 0
     t.integer  "category_id",                        null: false
-    t.text     "image",
+    t.text     "image"
     t.datetime "created_at",                         null: false
     t.datetime "updated_at",                         null: false
   end
