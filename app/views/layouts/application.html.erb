@@ -1,14 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CaseWayzStore</title>
+  <title>CaseWayz ~ <%= params[:controller].capitalize %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
+    <nav class="global">
 
-<%= yield %>
+        <ul>
+          <li>
+            <%= link_to(root_path) do %>
+                <span class="logo"><span>Case</span>Wayz</span>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to(root_path) do %>
+                <span class="fa fa-home"></span> Home
+            <% end %>
+          </li>
+          <li>
+            <%= link_to(about_path) do %>
+                <span class="fa fa-question"></span> About
+            <% end %>
+          </li>
+          <li>
+            <%= link_to(contact_path) do %>
+                <span class="fa fa-phone"></span> Contact
+            <% end %>
+          </li>
+          <li>
+            <%= link_to(product_path) do %>
+                <span class="fa fa-mobile"></span> Products
+            <% end %>
+          </li>
+        </ul>
+    </nav>
 
+    <%= yield %>
 </body>
 </html>

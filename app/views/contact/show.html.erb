@@ -1,0 +1,13 @@
+<div class="container">
+  <h1>Contact</h1>
+  <p class="blurb"><%= simple_format @contact.description %></p>
+  <ul class="contact-info">
+    <li><span>Phone: </span><%= @contact.phone %></li>
+    <li><span>E-Mail: </span><%= @contact.email %></li>
+    <li>
+      <span>Address:</span>
+      <br />
+      <%= simple_format @contact.address %>
+    </li>
+  </ul>
+</div>

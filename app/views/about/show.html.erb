@@ -1,5 +1,4 @@
 <div class="container">
-  <%= link_to 'Home', root_path %>
   <h1><%= @about.title %></h1>
-  <p><%= @about.description %></p>
+  <p><%= simple_format @about.description %></p>
 </div>
