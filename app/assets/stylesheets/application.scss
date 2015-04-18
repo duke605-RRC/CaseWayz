@@ -10,6 +10,10 @@ body {
   font-size: 15px;
 }
 
+.hidden {
+  display: none;
+}
+
 span.logo {
   font-weight: bold;
   font-size: 25px;
@@ -33,7 +37,8 @@ nav.global {
     list-style: none;
     margin: auto;
     padding: 0px;
-    width: 90%;
+    width: 70%;
+    position: relative;
 
     li {
       vertical-align: middle;
@@ -41,7 +46,7 @@ nav.global {
 
       a {
         color: #FFF;
-        font-size: 17px;
+        font-size: 14px;
         font-weight: bold;
         text-decoration: none;
         text-shadow: 2px 2px 0 #000;
@@ -58,13 +63,31 @@ nav.global {
       visibility: hidden;
       margin: 0px 5px;
     }
+
+    li.float {
+      float: right;
+      position: relative;
+      top: 8px;
+
+      span.cart {
+        background: #999999;
+        border-radius: 5px;
+        display: inline-block;
+        padding: 1px 10px;
+      }
+
+      span.fa-shopping-cart {
+        color: #FFF;
+        text-shadow: 2px 2px 0 #000;
+      }
+    }
   }
 }
 
 div.container {
   padding: 10px;
   min-width: 700px;
-  width: 90%;
+  width: 70%;
   margin: 10px auto auto auto;
   border: 2px outset #888;
   border-radius: 10px 15px;

@@ -11,6 +11,12 @@
     <nav class="global">
 
         <ul>
+          <li class="float">
+            <span class="fa fa-shopping-cart"></span>
+            <%= link_to(root_path) do %>
+                <span class="cart"><%= session[:cart].length %></span>
+            <% end %>
+          </li>
           <li>
             <%= link_to(root_path) do %>
                 <span class="logo"><span>Case</span>Wayz</span>

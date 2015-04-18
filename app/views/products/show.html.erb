@@ -1,0 +1,20 @@
+<div class="single-item container">
+  <h1><%= @product.name %></h1>
+  <p class="image">
+    <span class="price">CND <%= number_to_currency @product.price %></span>
+    <br />
+    <span class="quantity"><strong>Quantity: </strong> <%= @product.quantity %></span>
+    <br />
+    <%= image_tag @product.image.url, alt: @product.name %>
+    <br />
+    <%= link_to(add_to_cart_path(@product), method: :post) do %>
+        <button><span class="fa fa-plus-circle"></span> Add to Cart</button>
+    <% end %>
+  </p>
+  <p class="sep">Details</p>
+  <section class="details">
+    <h2>Description</h2>
+    <p><%= simple_format @product.description %></p>
+  </section>
+  <span class="hidden" id="price"><%= @product.price %></span>
+</div>

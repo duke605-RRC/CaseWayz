@@ -29,6 +29,48 @@ div.item {
   }
 }
 
+div.single-item {
+  .price {
+    font-weight: bold;
+    color: #F00;
+  }
+
+  p {
+    padding: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+  }
+
+  p.image {
+    text-align: center;
+    margin: 10px;
+  }
+
+  p.sep {
+    font-weight: bold;
+    color: #6ca94f;
+    font-size: 19px;
+    text-shadow: 2px 2px 0 #487138;
+    padding: 10px;
+    box-shadow: 0px 2px 5px #000;
+    background: linear-gradient(#999999, #666666);
+  }
+
+  section.details {
+    padding: 0px 18px 18px 18px;
+    box-sizing: border-box;
+    margin: 0px;
+
+    h2 {
+      margin: 10px 0px;
+      color: #6ca94f;
+      font-weight: bold;
+      text-shadow: 2px 2px 0 #487138;
+      border-bottom: 3px solid #6ca94f;
+    }
+  }
+}
+
 section.pages {
   height: 20px;
   text-align: center;
