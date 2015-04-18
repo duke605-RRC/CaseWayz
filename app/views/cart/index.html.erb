@@ -1,0 +1,40 @@
+<div class="container">
+  <h1>Cart Items</h1>
+  <table class="cart">
+    <thead>
+    <tr>
+      <th>Image</th>
+      <th>Item</th>
+      <th>Price</th>
+      <th>Operation</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% if @products.length == 0 %>
+        <tr>
+          <td colspan="4" style="color: #AAA">No items in cart</td>
+        </tr>
+    <% end %>
+    <% @products.each do |product| %>
+        <tr>
+          <td><%= image_tag product.image.thumb.url %></td>
+          <td><%= product.name %></td>
+          <td>CND <%= number_to_currency(product.price) %></td>
+          <td>
+            <%= link_to remove_from_cart_path(product.id), method: :post, data: {confirm: "Remove #{product.name}?"} do %>
+                <button><span class="fa fa-trash"></span></button>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+    </tbody>
+    <tfoot>
+    <tr>
+      <td colspan="4"><strong>Total Items:</strong> <%= @products.length %></td>
+    </tr>
+    <tr>
+      <td colspan="4"><strong>Subtotal:</strong> <%= number_to_currency(@total) %></td>
+    </tr>
+    </tfoot>
+  </table>
+</div>

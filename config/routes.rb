@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'cart/index'
   get 'products/index'
   get 'products/show'
   devise_for :admin_users, ActiveAdmin::Devise.config
@@ -12,5 +13,8 @@ Rails.application.routes.draw do
 
   get '/products' => 'products#index', as: :products
   get '/products/:id' => 'products#show', as: :product, id: /\d+/
-  post '/products/add/:id' => 'products#add_to_cart', as: :add_to_cart, id: /\d+/
+
+  post '/cart/add/:id' => 'cart#add_to_cart', as: :add_to_cart, id: /\d+/
+  post '/cart/remove/:id' => 'cart#remove_from_cart', as: :remove_from_cart, id: /\d+/
+  get '/checkout' => 'cart#index', as: :cart
 end

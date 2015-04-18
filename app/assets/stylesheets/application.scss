@@ -18,7 +18,7 @@ span.logo {
   font-weight: bold;
   font-size: 25px;
   text-shadow: 2px 2px 0 #487138;
-  color: #6ca94f;
+  color: #82ca5d;
 
   span {
     color: #5f99b3;
@@ -74,6 +74,7 @@ nav.global {
         border-radius: 5px;
         display: inline-block;
         padding: 1px 10px;
+        box-shadow: inset 1px 1px 3px #000;
       }
 
       span.fa-shopping-cart {
@@ -95,7 +96,7 @@ div.container {
   background: #FFF;
 
   h1 {
-    color: #6ca94f;
+    color: #82ca5d;
     text-shadow: 2px 2px 0 #487138;
     font-weight: bold;
   }

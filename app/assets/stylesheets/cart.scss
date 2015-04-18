@@ -1,0 +1,36 @@
+div.container {
+  table.cart {
+    margin: 0px;
+
+    thead th {
+      background: linear-gradient(#999999, #666666);
+
+      text-shadow: 2px 2px 0 #487138;
+      color: #82ca5d;
+    }
+
+    thead th, tbody td {
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    tbody td {
+      border-bottom: 1px dashed #999;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #EEE;
+    }
+
+    tfoot {
+      tr {
+        background: #444;
+      }
+
+      td {
+        text-align: right;
+        color: #FFF;
+      }
+    }
+  }
+}
