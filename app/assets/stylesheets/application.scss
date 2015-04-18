@@ -27,6 +27,7 @@ nav.global {
   background: linear-gradient(#999999, #666666);
   box-sizing: border-box;
   min-width: 700px;
+  box-shadow: 0px 1px 7px #000;
 
   ul {
     list-style: none;
@@ -82,10 +83,10 @@ div.container {
     font-weight: bold;
     letter-spacing: 0px;
     color: #3b6676;
-    transition: letter-spacing 0.5s;
+    transition: color 0.5s;
   }
 
   a:hover {
-    letter-spacing: 1px;
+    color: #F00;
   }
 }

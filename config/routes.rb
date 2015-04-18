@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   get '/contact' => 'contact#show', as: :contact
 
-  get '/products/all' => 'about#show', as: :product
+  get '/products' => 'products#index', as: :products
+  get '/products/:id' => 'products#show', as: :product, id: /\d+/
 end

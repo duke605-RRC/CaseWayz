@@ -1,3 +1,35 @@
-// Place all the styles related to the products controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+div.item {
+  border: 1px solid #000;
+  margin: 5px;
+  display: inline-block;
+  width: 200px;
+  padding: 3px;
+  box-sizing: border-box;
+  vertical-align: top;
+  position: relative;
+  height: 250px;
+
+  p {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  p.image {
+    text-align: center;
+  }
+
+  p.price {
+    text-align: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    color: #F00;
+    font-weight: bold;
+  }
+}
+
+section.pages {
+  height: 20px;
+  text-align: center;
+}

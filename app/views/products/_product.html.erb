@@ -1,0 +1,11 @@
+<div class="item">
+  <p class="image">
+    <%= link_to(product) do %>
+        <%= image_tag product.image.list_display.url, alt: product.name %>
+    <% end %>
+  </p>
+  <p><%= simple_format truncate(product.description, length: 95) %></p>
+  <p class="price">
+    CDN <%= number_to_currency(product.price) %>
+  </p>
+</div>

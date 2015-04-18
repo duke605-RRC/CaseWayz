@@ -217,6 +217,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   mini_magick
   rails (= 4.2.1.rc3)
   sass-rails (~> 5.0)
