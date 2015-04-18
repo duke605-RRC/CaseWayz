@@ -1,0 +1,20 @@
+<div class="container">
+  <form class="search" method="GET">
+    <fieldset>
+      <legend>Search</legend>
+      <ul>
+        <li>
+          <label for="query">Query:</label>
+          <input id="query" name="query" type="text" size="40" />
+        </li>
+        <li>
+          <label for="category">Category:</label>
+          <select id="category" name="category">
+            <option value="-1">All</option>
+            <%= options_from_collection_for_select(@categories, 'id', 'name') %>
+          </select>
+        </li>
+      </ul>
+    </fieldset>
+  </form>
+</div>

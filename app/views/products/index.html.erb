@@ -1,5 +1,11 @@
-<div class="container">
-  <%= render @products %>
+<%= render 'search' %>
 
-  <section class="pages"><%= paginate @products %></section>
+<div class="container">
+  <div class="products">
+    <%= render @products %>
+  </div>
+  <section class="pages">
+    <%= paginate @products %>
+    <%= page_entries_info @products %>
+  </section>
 </div>

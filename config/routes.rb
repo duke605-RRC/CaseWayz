@@ -12,9 +12,9 @@ Rails.application.routes.draw do
   get '/contact' => 'contact#show', as: :contact
 
   get '/products' => 'products#index', as: :products
-  get '/products/:id' => 'products#show', as: :product, id: /\d+/
+  get '/product/:id' => 'products#show', as: :product, id: /\d+/
 
   post '/cart/add/:id' => 'cart#add_to_cart', as: :add_to_cart, id: /\d+/
   post '/cart/remove/:id' => 'cart#remove_from_cart', as: :remove_from_cart, id: /\d+/
-  get '/checkout' => 'cart#index', as: :cart
+  get '/cart' => 'cart#index', as: :cart
 end

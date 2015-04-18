@@ -18,5 +18,5 @@ class CartController < ApplicationController
     redirect_to :back
   end
 
-  
+
 end

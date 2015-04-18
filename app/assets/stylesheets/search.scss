@@ -1,0 +1,30 @@
+form.search {
+  fieldset {
+    legend {
+      color: #90d528;
+      font-size: 25px;
+      text-shadow: 2px 2px 0 #487138;
+      font-weight: bold;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+
+      li {
+        display: inline-block;
+        vertical-align: top;
+
+        label {
+          display: block;
+          font-weight: bold;
+        }
+      }
+
+      li.sep {
+        display: block;
+      }
+    }
+  }
+}
