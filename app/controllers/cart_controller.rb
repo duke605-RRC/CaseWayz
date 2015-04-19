@@ -1,7 +1,7 @@
 class CartController < ApplicationController
   def index
     @products = session[:cart].map { |id| Product.find(id) }
-    @total = @products.reduce(0) { |sum, product| sum += product.price }
+    @total = @products.reduce(0) { |_a, e|  + e.price }
     @provinces = Province.all
   end
 
@@ -17,6 +17,4 @@ class CartController < ApplicationController
 
     redirect_to :back
   end
-
-
 end

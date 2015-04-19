@@ -1,8 +1,9 @@
 ActiveAdmin.register Customer do
-  permit_params :first_name, :last_name, :address, :city, :postal_code, :email, :province_id
+  permit_params :first_name, :last_name, :address, :city, :postal_code, :email,
+                :province_id
 
-  form(:html => { :multipart => true }) do |f|
-    f.inputs "Customer" do
+  form(html: { multipart: true }) do |f|
+    f.inputs 'Customer' do
       f.input :first_name
       f.input :last_name
       f.input :address

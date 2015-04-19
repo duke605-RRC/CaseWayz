@@ -1,14 +1,14 @@
 ActiveAdmin.register Product do
   permit_params :name, :description, :price, :quantity, :image, :category_id
 
-  form(:html => { :multipart => true }) do |f|
-    f.inputs "Product" do
+  form(html: { multipart: true }) do |f|
+    f.inputs 'Product' do
       f.input :name
       f.input :description
       f.input :price
       f.input :quantity
       f.input :category_id, label: 'Category', as: :select, collection: Category.all.map { |c| [c.name, c.id] }
-      f.input :image, :as => :file
+      f.input :image, as: :file
     end
     f.submit
   end
