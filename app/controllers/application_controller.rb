@@ -8,4 +8,8 @@ class ApplicationController < ActionController::Base
   def setup_cart
     session[:cart] ||= []
   end
+
+  def customer_from_flash
+    Customer.new(flash[:customer])
+  end
 end

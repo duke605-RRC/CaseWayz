@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root 'products#index'
+  post '/' => 'cart#clear_cart', as: :clear_cart
 
   get '/about' => 'about#show', as: :about
 
@@ -19,4 +20,6 @@ Rails.application.routes.draw do
   get '/cart' => 'cart#index', as: :cart
 
   post '/order/new' => 'cart#create_order_for_customer', as: :customers
+  post '/order/confirm' => 'cart#confirm_order', as: :confirm_cart
+  get 'order/new' => 'cart#index'
 end

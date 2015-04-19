@@ -1,39 +1,4 @@
 div.container {
-  table.cart {
-    margin: 0px;
-
-    thead th {
-      background: linear-gradient(#999999, #666666);
-
-      text-shadow: 2px 2px 0 #487138;
-      color: #82ca5d;
-    }
-
-    thead th, tbody td {
-      text-align: center;
-      vertical-align: middle;
-    }
-
-    tbody td {
-      border-bottom: 1px dashed #999;
-    }
-
-    tbody tr:nth-child(even) {
-      background: #EEE;
-    }
-
-    tfoot {
-      tr {
-        background: #444;
-      }
-
-      td {
-        text-align: right;
-        color: #FFF;
-      }
-    }
-  }
-
   div#error_explanation {
     width: 400px;
     margin-top: 10px;
@@ -121,6 +86,45 @@ div.container {
 
     div.field_with_errors {
       color: #F00;
+    }
+  }
+
+  section.info {
+    padding: 0px;
+    margin: 0px;
+
+    h2 {
+      font-weight: bold;
+      text-shadow: 2px 2px 0 #487138;
+      color: #82ca5d;
+      margin: 0px;
+    }
+
+    ul {
+      background: #EEE;
+      padding: 10px;
+      margin: 0px;
+      list-style: none;
+      width: 400px;
+
+      li {
+        margin: 5px;
+
+        span.label {
+          font-size: 15px;
+          font-weight: bold;
+          display: block;
+        }
+      }
+    }
+  }
+
+  p.confirm {
+    text-align: center;
+    margin: 10px 0px 0px 0px;
+
+    a {
+      font-size: 20px;
     }
   }
 }

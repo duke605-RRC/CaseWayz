@@ -1,0 +1,44 @@
+<div class="container">
+  <h1>Confirm Order</h1>
+  <%= render partial: 'cart/list', locals: { products: @products, subtotal: @subtotal, taxes: @taxes, total: @total } %>
+
+  <section class="info">
+    <h2>Order Information</h2>
+    <ul>
+      <li>
+        <span class="label">Name:</span>
+        <%= "#{@customer.first_name} #{@customer.last_name}" %>
+      </li>
+      <li>
+        <span class="label">Province:</span>
+        <%= @customer.province.name %>
+      </li>
+      <li>
+        <span class="label">City:</span>
+        <%= @customer.city %>
+      </li>
+      <li>
+        <span class="label">Address:</span>
+        <%= @customer.address %>
+      </li>
+      <li>
+        <span class="label">Postal Code:</span>
+        <%= @customer.email %>
+      </li>
+    </ul>
+  </section>
+
+  <p class="confirm">
+    <%= link_to confirm_cart_path, class: 'button', method: :post do %>
+      <span class="fa fa-check"></span> Confirm
+    <% end %>
+
+    <%= link_to cart_path, class: 'button' do %>
+        <span class="fa fa-edit"></span> Edit
+    <% end %>
+
+    <%= link_to clear_cart_path, class: 'button', method: :post do %>
+        <span class="fa fa-close"></span> Cancel
+    <% end %>
+  </p>
+</div>

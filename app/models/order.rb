@@ -5,4 +5,16 @@ class Order < ActiveRecord::Base
 
   belongs_to :customer
   has_many :line_items
+
+  def self.create_order(customer)
+    order = Order.new
+
+    order.status = 'outstanding'
+    order.pst = customer.province.pst
+    order.gst = customer.province.gst
+    order.hst = customer.province.hst
+    order.customer = customer
+
+    order
+  end
 end
