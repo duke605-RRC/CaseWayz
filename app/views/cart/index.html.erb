@@ -87,7 +87,7 @@
           <%= email_field 'customer', :email, required: true, placeholder: 'fake@example.com' %>
         </li>
         <li>
-          <%= f.submit 'Checkout' %>
+          <%= f.submit 'Checkout', disabled: !session[:cart].any? %>
         </li>
       </ul>
     </fieldset>

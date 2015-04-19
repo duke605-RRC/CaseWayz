@@ -100,6 +100,11 @@ div.container {
             display: block;
           }
 
+
+          input[disabled='disabled'] {
+            color: #999;
+          }
+
           select {
             width: 75%;
             padding: 2px;

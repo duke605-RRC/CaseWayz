@@ -6,6 +6,9 @@ class CartController < ApplicationController
   end
 
   def create_order_for_customer
+    redirect_to cart_path unless session[:cart].any?
+    return unless session[:cart].any?
+
     @customer = Customer.new(customer_params)
 
     if @customer.save
