@@ -3,6 +3,17 @@ class CartController < ApplicationController
     @products = session[:cart].map { |id| Product.find(id) }
     @total = @products.reduce(0) { |_a, e|  + e.price }
     @provinces = Province.all
+    @customer = Customer.new
+  end
+
+  def create_order_for_customer
+    @customer = Customer.new(customer_params)
+
+    if @customer.save
+
+    else
+      render :index
+    end
   end
 
   def add_to_cart
@@ -16,5 +27,11 @@ class CartController < ApplicationController
     session[:cart] -= [params[:id]]
 
     redirect_to :back
+  end
+
+  private
+
+  def customer_params
+    params.require('customer').permit(:first_name, :last_name, :address, :city, :postal_code, :email, :province_id)
   end
 end

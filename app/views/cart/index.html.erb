@@ -37,4 +37,46 @@
     </tr>
     </tfoot>
   </table>
+
+  <%= form_for(@customer, html: { class: 'order' }) do |f| %>
+    <fieldset>
+      <legend>Order Information</legend>
+      <ul>
+        <li>
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, required: true, placeholder: 'John' %>
+        </li>
+        <li>
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, required: true, placeholder: 'Smith' %>
+        </li>
+        <li>
+          <%= f.label :province_id %>
+          <select id="province_id" name="province_id" required="required">
+            <option value=""></option>
+            <%= options_from_collection_for_select(@provinces, 'id', 'name') %>
+          </select>
+        </li>
+        <li>
+          <%= f.label :city %>
+          <%= f.text_field :city, required: true, placeholder: 'Winnipeg' %>
+        </li>
+        <li>
+          <%= f.label :address %>
+          <%= f.text_field :address, required: true, placeholder: 'Box 770' %>
+        </li>
+        <li>
+          <%= f.label :postal_code %>
+          <%= f.text_field :postal_code, required: true, pattern: '^([ABCEGHJKLMNPRSTVXY]\d){3}$', placeholder: 'R0A0T0' %>
+        </li>
+        <li>
+          <%= f.label :email %>
+          <%= email_field 'customer', :email, required: true, placeholder: 'fake@example.com' %>
+        </li>
+        <li>
+          <%= f.submit 'Checkout' %>
+        </li>
+      </ul>
+    </fieldset>
+  <% end %>
 </div>

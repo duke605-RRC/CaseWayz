@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   post '/cart/add/:id' => 'cart#add_to_cart', as: :add_to_cart, id: /\d+/
   post '/cart/remove/:id' => 'cart#remove_from_cart', as: :remove_from_cart, id: /\d+/
   get '/cart' => 'cart#index', as: :cart
+
+  post '/order/new' => 'cart#create_order_for_customer', as: :customers
 end
