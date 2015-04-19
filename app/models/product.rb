@@ -8,10 +8,15 @@ class Product < ActiveRecord::Base
   mount_uploader :image, ImageUploader
 
   def self.filter_by_sale(products, sale)
-    return products unless sale
     return products unless sale == 'on'
 
     return products.where("price LIKE '%.98'")
+  end
+
+  def self.filter_by_new(products, new)
+    return products unless new == 'on'
+
+    return products.where('created_at > :date', date: 3.week.ago);
   end
 
   def self.filter_by_category(products, category_id)
@@ -31,6 +36,7 @@ class Product < ActiveRecord::Base
     products = filter_by_category(products, params[:category])
     products = filter_by_query(products, params[:query])
     products = filter_by_sale(products, params[:sale])
+    products = filter_by_new(products, params[:new])
 
     return products
   end

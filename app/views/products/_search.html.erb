@@ -10,10 +10,13 @@
           <label for="category">Category:</label>
           <select id="category" name="category">
             <option value="all">All</option>
-            <%= options_from_collection_for_select(@categories, 'id', 'name') %>
+            <% @categories.each do |category| %>
+                <option value="<%= category.id %>" <%= 'selected' if params[:category] == category.id.to_s %>><%= category.name %></option>
+            <% end %>
           </select>
         </li>
-        <li class="bottom"><input id="sale" name="sale" type="checkbox" /> <label for="sale" class="check">On Sale</label></li>
+        <li class="bottom"><input id="sale" name="sale" type="checkbox" <%= 'checked' if params[:sale] == 'on' %> /> <label for="sale" class="check">On Sale</label></li>
+        <li class="bottom"><input id="new" name="new" type="checkbox" <%= 'checked' if params[:new] == 'on' %> /> <label for="new" class="check">New Items</label></li>
         <li class="bottom"><button type="submit">Go</button></li>
       </ul>
     </fieldset>
