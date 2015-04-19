@@ -7,8 +7,16 @@ class Product < ActiveRecord::Base
 
   mount_uploader :image, ImageUploader
 
+  def self.filter_by_sale(products, sale)
+    return products unless sale
+    return products unless sale == 'on'
+
+    return products.where("price LIKE '%.98'")
+  end
+
   def self.filter_by_category(products, category_id)
     return products unless category_id
+    return products if category_id == 'all'
 
     return products.where(category_id: category_id)
   end
@@ -16,12 +24,14 @@ class Product < ActiveRecord::Base
   def self.filter_by_query(products, query)
     return products unless query
 
-    return products.where("description LIKE '%#{query}%' OR name LIKE '%#{query}%'")
+    return products.where("name LIKE '%#{query}%' OR description LIKE '%#{query}%'")
   end
 
-  def self.filter(products, category_id, query)
-    products = filter_by_category(products, category_id)
-    products = filter_by_query(products, query)
+  def self.filter(products, params)
+    products = filter_by_category(products, params[:category])
+    products = filter_by_query(products, params[:query])
+    products = filter_by_sale(products, params[:sale])
+
     return products
   end
 end

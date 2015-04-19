@@ -1,4 +1,7 @@
 <div class="item">
+  <% if product.price.to_s.end_with?('.98') %>
+    <p class="sale"><span>On Sale</span></p>
+  <% end %>
   <p class="image">
     <%= link_to(product) do %>
         <%= image_tag product.image.list_display.url, alt: product.name %>

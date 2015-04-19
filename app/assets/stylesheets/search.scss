@@ -1,5 +1,11 @@
 form.search {
+  margin: 0px;
+  padding: 0px;
+
   fieldset {
+    margin: 0px;
+    padding: 0px;
+
     legend {
       color: #90d528;
       font-size: 25px;
@@ -15,15 +21,38 @@ form.search {
       li {
         display: inline-block;
         vertical-align: top;
+        padding: 0px;
+        margin: 0px 10px;
 
-        label {
+        label:not(.check) {
           display: block;
           font-weight: bold;
         }
+
+        label.check {
+          font-weight: bold;
+        }
+
+        input[type='text'] {
+          padding: 1px;
+          border-radius: 0px;
+          margin: 0px;
+          width: 300px;
+        }
+
+        input:focus, select:focus {
+          outline: none;
+          box-shadow: 0px 0px 3px #6aaac7;
+        }
+      }
+
+      li.bottom {
+        vertical-align: bottom;
       }
 
       li.sep {
         display: block;
+        margin: 10px;
       }
     }
   }

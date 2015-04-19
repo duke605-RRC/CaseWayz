@@ -1,19 +1,20 @@
 <div class="container">
   <form class="search" method="GET">
     <fieldset>
-      <legend>Search</legend>
       <ul>
         <li>
           <label for="query">Query:</label>
-          <input id="query" name="query" type="text" size="40" />
+          <input id="query" name="query" type="text" />
         </li>
         <li>
           <label for="category">Category:</label>
           <select id="category" name="category">
-            <option value="-1">All</option>
+            <option value="all">All</option>
             <%= options_from_collection_for_select(@categories, 'id', 'name') %>
           </select>
         </li>
+        <li class="bottom"><input id="sale" name="sale" type="checkbox" /> <label for="sale" class="check">On Sale</label></li>
+        <li class="bottom"><button type="submit">Go</button></li>
       </ul>
     </fieldset>
   </form>
