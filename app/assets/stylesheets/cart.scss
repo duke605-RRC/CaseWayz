@@ -34,6 +34,24 @@ div.container {
     }
   }
 
+  div#error_explanation {
+    width: 400px;
+    margin-top: 10px;
+    border: 2px solid #E00;
+
+    h3 {
+      box-sizing: border-box;
+      padding: 3px;
+      color: #FFF;
+      background: #F00;
+      margin: 0px;
+    }
+
+    ul {
+      margin: 0px;
+    }
+  }
+
   form.order {
     margin: 10px 0px 0px 0px;
     padding: 0px;
@@ -94,6 +112,10 @@ div.container {
           }
         }
       }
+    }
+
+    div.field_with_errors {
+      color: #F00;
     }
   }
 }

@@ -38,6 +38,18 @@
     </tfoot>
   </table>
 
+  <% if @customer.errors.any? %>
+      <div id="error_explanation">
+        <h3><%= pluralize(@customer.errors.count, 'error') %>:</h3>
+
+        <ul>
+          <% @customer.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+  <% end %>
+
   <%= form_for(@customer, html: { class: 'order' }) do |f| %>
     <fieldset>
       <legend>Order Information</legend>
@@ -52,8 +64,8 @@
         </li>
         <li>
           <%= f.label :province_id %>
-          <select id="province_id" name="province_id" required="required">
-            <option value=""></option>
+          <select id="customer_province_id" name="customer[province_id]" required="required">
+            <option value="">Please select a province</option>
             <%= options_from_collection_for_select(@provinces, 'id', 'name') %>
           </select>
         </li>
@@ -67,7 +79,8 @@
         </li>
         <li>
           <%= f.label :postal_code %>
-          <%= f.text_field :postal_code, required: true, pattern: '^([ABCEGHJKLMNPRSTVXY]\d){3}$', placeholder: 'R0A0T0' %>
+          <%= f.text_field :postal_code, required: true, placeholder: 'R0A0T0' %>
+          <!-- , pattern: '^([ABCEGHJKLMNPRSTVXY]\d){3}$' -->
         </li>
         <li>
           <%= f.label :email %>
