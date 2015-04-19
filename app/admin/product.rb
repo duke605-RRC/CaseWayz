@@ -1,6 +1,16 @@
 ActiveAdmin.register Product do
   permit_params :name, :description, :price, :quantity, :image, :category_id
 
+  filter :category
+  filter :line_items, label: 'Line Item', as: :select, collection: LineItem.all.map { |i| ["LineItem ##{i.id}", i.id] }
+  filter :orders, label: 'Order', as: :select, collection: Order.all.map { |o| ["Order ##{o.id}", o.id] }
+  filter :name
+  filter :description
+  filter :price
+  filter :quantity
+  filter :created_at
+  filter :updated_at
+
   form(html: { multipart: true }) do |f|
     f.inputs 'Product' do
       f.input :name
@@ -16,7 +26,7 @@ ActiveAdmin.register Product do
   index do
     selectable_column
     column :id do |product|
-      link_to product.id, edit_admin_product_path(product)
+      link_to product.id, admin_product_path(product)
     end
     column :name
     column :description

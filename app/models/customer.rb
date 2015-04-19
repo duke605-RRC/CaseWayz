@@ -7,6 +7,8 @@ class Customer < ActiveRecord::Base
   belongs_to :province
   has_many :orders
 
+  has_many :line_items, through: :orders
+
   def tax_rate
     province.safe_gst + province.safe_pst + province.safe_hst
   end

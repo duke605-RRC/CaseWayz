@@ -61,7 +61,7 @@ class CartController < ApplicationController
 
   def cart_variables
     @products = session[:cart].map { |id| Product.find(id) }
-    @subtotal = @products.reduce(0) { |_a, e|  + e.price }
+    @subtotal = @products.reduce(0) { |_a, e|  _a += e.price }
     @provinces = Province.all
   end
 end

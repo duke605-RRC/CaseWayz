@@ -6,6 +6,8 @@ class LineItem < ActiveRecord::Base
   belongs_to :order
   belongs_to :product
 
+  has_one :customer, through: :order
+
   def self.create_line_item(order, product, quantity)
     line_item = LineItem.new
 
