@@ -7,14 +7,14 @@
     <br />
     <%= image_tag @product.image.url, alt: @product.name %>
     <br />
-    <%= link_to(add_to_cart_path(@product), method: :post) do %>
-        <button><span class="fa fa-plus-circle"></span> Add to Cart</button>
+    <%= link_to(add_to_cart_path(@product), method: :post, class: 'button') do %>
+        <span class="fa fa-plus-circle"></span> Add to Cart
     <% end %>
   </p>
   <p class="sep">Details</p>
   <section class="details">
     <h2>Description</h2>
-    <p><%= simple_format @product.description %></p>
+    <%= simple_format @product.description %>
   </section>
   <span class="hidden" id="price"><%= @product.price %></span>
 </div>

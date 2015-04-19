@@ -21,8 +21,8 @@
           <td><%= product.name %></td>
           <td>CND <%= number_to_currency(product.price) %></td>
           <td>
-            <%= link_to remove_from_cart_path(product.id), method: :post, data: {confirm: "Remove #{product.name}?"} do %>
-                <button><span class="fa fa-trash"></span></button>
+            <%= link_to remove_from_cart_path(product.id), method: :post, class: 'button', data: {confirm: "Remove #{product.name}?"} do %>
+                <span class="fa fa-trash"></span>
             <% end %>
           </td>
         </tr>
