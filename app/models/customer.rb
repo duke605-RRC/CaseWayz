@@ -4,4 +4,5 @@ class Customer < ActiveRecord::Base
   validates :postal_code, format: { with: /\A([ABCEGHJKLMNPRSTVXY]\d){3}\Z/ }
 
   belongs_to :province
+  has_many :orders
 end

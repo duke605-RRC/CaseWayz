@@ -1,5 +1,5 @@
 class CartController < ApplicationController
-  before_action :get_cart_items, only: [:index, :create_order_for_customer]
+  before_action :cart_variables, only: [:index, :create_order_for_customer]
 
   def index
     @customer = Customer.new
@@ -37,7 +37,7 @@ class CartController < ApplicationController
     params.require('customer').permit(:first_name, :last_name, :address, :city, :postal_code, :email, :province_id)
   end
 
-  def get_cart_items
+  def cart_variables
     @products = session[:cart].map { |id| Product.find(id) }
     @total = @products.reduce(0) { |_a, e|  + e.price }
     @provinces = Province.all
