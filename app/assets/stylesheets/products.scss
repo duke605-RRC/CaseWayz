@@ -1,5 +1,9 @@
-div.notice {
+div.products {
+  margin: auto;
+  max-width: 840px;
+}
 
+div.notice {
   &.error {
     background: linear-gradient(#F00, #E00);
     border-bottom: 1px solid #600;
