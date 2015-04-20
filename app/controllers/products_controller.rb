@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.filter(Product.all, params).order(:name).page(params[:page]).per(5)
+    @products = Product.filter(Product.all, params).order(:name).page(params[:page]).per(8)
     @categories = Category.order(:name)
   end
 
