@@ -22,14 +22,9 @@ class CartController < ApplicationController
     products = session[:cart].map { |e| Product.find(e) }
     customer = customer_from_flash
 
-    unless customer.save
-      flash[:notice] = 'There was an error saving the customer! Please try checking out again.'
+    customer.make_order(products, flash, session)
 
-      return redirect_to root_path
-    end
-
-    return root_path unless customer.make_order(products)
-    clear_cart
+    redirect_to root_path
   end
 
   def add_to_cart
@@ -61,7 +56,7 @@ class CartController < ApplicationController
 
   def cart_variables
     @products = session[:cart].map { |id| Product.find(id) }
-    @subtotal = @products.reduce(0) { |_a, e|  _a += e.price }
+    @subtotal = @products.reduce(0) { |a, e|  a + e.price }
     @provinces = Province.all
   end
 end

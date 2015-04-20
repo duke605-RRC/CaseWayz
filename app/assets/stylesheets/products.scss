@@ -1,3 +1,29 @@
+div.notice {
+
+  &.error {
+    background: linear-gradient(#F00, #E00);
+    border-bottom: 1px solid #600;
+    box-shadow: 0px 0px 3px #000;
+  }
+
+  &.success {
+    background: linear-gradient(#0F0, #0E0);
+    border-bottom: 1px solid #060;
+    box-shadow: 0px 0px 3px #000;
+  }
+  
+  p {
+    width: 50%;
+    min-width: 700px;
+    margin: auto;
+    text-align: center;
+    padding: 3px;
+    color: #FFF;
+    text-shadow: 1px 1px 3px #000;
+    font-weight: bold;
+  }
+}
+
 div.item {
   border: 1px solid #000;
   margin: 5px;

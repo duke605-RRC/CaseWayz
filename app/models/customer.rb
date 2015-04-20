@@ -13,17 +13,23 @@ class Customer < ActiveRecord::Base
     province.safe_gst + province.safe_pst + province.safe_hst
   end
 
-  def make_order(products)
+  def make_order(products, flash, session)
+    flash[:notice], flash[:code] = ['There was an error creating your order! Please try again.', 1]
+
+    # Saving customer
+    return false unless save
+
     # Creating order
     order = Order.create_order(itself)
     order.save
 
     # Creating line items
     products.each do |product|
-      line_item = LineItem.create_line_item(order, product, 1)
-      line_item.save
+      LineItem.create_line_item(order, product, 1).save
     end
 
+    flash[:notice], flash[:code] = ['Order successfully created!', 0]
+    session[:cart] = []
     true
   end
 end

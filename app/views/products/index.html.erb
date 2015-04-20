@@ -1,3 +1,9 @@
+<% if flash[:notice] %>
+    <div class="notice <%= flash[:code] == 0 ? 'success' : 'error' %>">
+      <p><%= flash[:notice] %></p>
+    </div>
+<% end %>
+
 <%= render 'search' %>
 
 <div class="container">
