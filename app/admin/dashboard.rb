@@ -7,6 +7,12 @@ ActiveAdmin.register_page 'Dashboard' do
       'Outstanding Orders'
     end
     div style: 'padding-left: 30px' do
+      unless Order.all.any?
+        h3 style: 'margin: 0px' do
+          'No outstanding orders'
+        end
+      end
+
       Order.where(status: 'outstanding').each do |order|
         h3 style: 'font-weight: bold' do
           span do
